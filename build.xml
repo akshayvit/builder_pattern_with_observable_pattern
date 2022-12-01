@@ -1,0 +1,18 @@
+<project>
+   <target name="compile">
+       <mkdir name="build/classes"/>
+       <javac srcdir="/" destdir="build/classes"/>
+   </target>
+
+   <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/Observable.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="observable"/>
+            </manifest>
+        </jar>
+    </target>
+   <target name="run">
+     <java jar="build/jar/Observable.jar" fork="true"/>
+   </target>
+</project>
